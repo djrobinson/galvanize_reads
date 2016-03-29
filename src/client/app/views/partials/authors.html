@@ -1,0 +1,18 @@
+<div ng-controller="AuthorCtrl" class="nine columns">
+  <div ng-repeat="author in authors | filter:query">
+    <div class="row">
+      <div class="two columns">
+        <img ng-src="{{author.pic_url}}">
+      </div>
+      <div class="ten columns">
+        <h4><a href="/#/authors/{{author.id}}">{{author.first}} {{author.last}}</a></h4>
+        <p>{{author.bio}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="one-half column">
+      <a class="button" href="/#/authors/new">Add Author</a>
+    </div>
+  </div>
+</div>

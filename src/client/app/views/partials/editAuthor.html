@@ -1,0 +1,15 @@
+<h2>Authors</h2>
+  <div ng-controller="oneAuthorCtrl">
+    <form ng-submit="editAuthor()">
+      First Name<br>
+      <input type="text" ng-model="authorData.first"><br>
+      Last Name<br>
+      <input type="text" ng-model="authorData.last"><br>
+      Bio<br>
+      <input type="text" ng-model="authorData.bio"><br>
+      Pic Url<br>
+      <input type="text" ng-model="authorData.pic_url"><br>
+      <input type="submit">
+    </form>
+    <a class="button" ng-click="deleteAuthor()" href="/#/authors">Delete Author</a>
+  </div>

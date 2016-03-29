@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.landing {
+  background-color: gray;
+  text-align: center;
+  border: solid black 1px;
+}
+
+img {
+  width: 100%;
+}
+
+.button {
+  width: 90%;
+}

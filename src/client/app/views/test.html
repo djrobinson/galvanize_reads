@@ -1,0 +1,30 @@
+<h1>Howdy!</h1>
+  <h2>Books</h2>
+  <div ng-controller="BookCtrl">
+  <form ng-submit="addBook()">
+    Title: <input type="text" ng-model="bookData.title"><br>
+    Genre: <input type="text" ng-model="bookData.genre"><br>
+    Description: <input type="text" ng-model="bookData.description"><br>
+    img url: <input type="text" ng-model="bookData.img_url"><br>
+    author id: <input type="text" ng-model="bookData.author_id"><br>
+    <input type="submit">
+  </form>
+  </div>
+  <h2>Authors</h2>
+  <div ng-controller="AuthorCtrl">
+  <form ng-submit="addAuthor()">
+    <input type="text" ng-model="authorData.first"><br>
+    <input type="text" ng-model="authorData.last"><br>
+    <input type="text" ng-model="authorData.bio"><br>
+    <input type="text" ng-model="authorData.pic_url"><br>
+    <input type="submit">
+  </form>
+  </div>
+  <h2>Books List:</h2>
+
+  <div ng-controller="AuthorCtrl">
+    <div ng-repeat="author in authors">
+      <p>{{author.bio}}</p>
+    </div>
+  </div>
+</div>

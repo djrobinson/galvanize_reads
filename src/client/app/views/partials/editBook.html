@@ -1,0 +1,17 @@
+<h2>Books</h2>
+  <div ng-controller="oneBookCtrl">
+    <form ng-submit="editBook()">
+      Title: <br>
+      <input type="text" ng-model="bookData.title"><br>
+      Genre: <br>
+      <input type="text" ng-model="bookData.genre"><br>
+      Description: <br>
+      <input type="text" ng-model="bookData.description"><br>
+      Image url: <br>
+      <input type="text" ng-model="bookData.img_url"><br>
+      Author id: <br>
+      <input type="text" ng-model="bookData.author_id"><br>
+      <input type="submit">
+    </form>
+    <a class="button" ng-click="deleteBook()" href="/#/books">Delete Book</a>
+  </div>
