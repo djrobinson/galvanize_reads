@@ -47,7 +47,7 @@ angular.module('readerApp')
     $scope.deleteBook = function(){
       bookFactory.deleteBook($routeParams.book_id)
       .success(function(data){
-        console.log("Bahdeleted!!!!");
+        console.log("Deleted!!!!");
       });
     };
 }]);
