@@ -2,6 +2,7 @@ angular.module('readerApp')
 .controller('BookCtrl', ['$scope', '$http', '$routeParams', 'bookFactory', function($scope, $http, $routeParams, bookFactory){
 
     function getBooks(){
+
       bookFactory.getBooks()
         .success(function(data) {
           console.log(data);
