@@ -12,7 +12,7 @@ module.exports = {
     return Books().select().where({id: book_id});
   },
   createBook: function(book){
-    return Books().insert(book);
+    return Books().insert(book, 'id');
   },
   editBook: function(book_id, book){
     return Books().where({id: book_id}).update(book);

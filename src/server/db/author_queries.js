@@ -4,14 +4,6 @@ function Authors(){
   return knex('authors');
 }
 
-function Books(){
-  return knex('books');
-}
-
-function BooksAuthors(){
-  return knex('books_authors');
-}
-
 module.exports = {
   getAuthors: function(){
     return Authors().select();

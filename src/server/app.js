@@ -12,6 +12,7 @@ var jwt    = require('jsonwebtoken');
 var bookRoutes = require('./routes/book_routes.js');
 var authorRoutes = require('./routes/author_routes.js');
 var authRoutes = require('./routes/auth_routes.js');
+var bookAuthorRoutes = require('./routes/book_author_routes.js');
 
 
 
@@ -45,12 +46,6 @@ routerProtect.use(function(req, res, next) {
   }
 });
 
-// *** view engine *** //
-// var swig = new swig.Swig();
-// app.engine('html', swig.renderFile);
-// app.set('view engine', 'html');
-
-
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
 
@@ -73,6 +68,7 @@ app.use('/api', routerProtect);
 app.use('/api/books', bookRoutes);
 app.use('/api/authors', authorRoutes);
 app.use('/auth', authRoutes);
+app.use('/public', bookAuthorRoutes);
 
 
 // catch 404 and forward to error handler

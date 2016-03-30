@@ -1,4 +1,4 @@
-<div ng-controller="BookCtrl" class="nine columns">
+<div ng-controller="publicBooksCtrl" class="nine columns">
   <div ng-repeat="book in books | filter:query">
     <div class="row">
       <div class="two columns">
@@ -6,6 +6,7 @@
       </div>
       <div class="ten columns">
         <h3><a href="/#/books/{{book.id}}">{{book.title}}</a></h3>
+        <h5>{{book.first}} {{book.last}}</h5>
         <h5>{{book.genre}}</h5>
         <p>{{book.description}}</p>
       </div>

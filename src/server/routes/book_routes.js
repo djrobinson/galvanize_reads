@@ -16,8 +16,8 @@ router.get('/:book_id', function(req, res, next){
 
 router.post('/new', function(req, res, next){
   console.log(req.body);
-  query.createBook(req.body).then(function(){
-    res.json({status: "Success!"});
+  query.createBook(req.body).then(function(data){
+    res.json(data);
   });
 });
 

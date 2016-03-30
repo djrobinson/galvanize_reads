@@ -1,8 +1,18 @@
 angular.module('readerApp')
-.controller('BookCtrl', ['$scope', '$http', '$routeParams', 'bookFactory', function($scope, $http, $routeParams, bookFactory){
+.controller('BookCtrl', ['$scope', '$http', '$routeParams', 'bookFactory', 'authorFactory','bookAuthorFactory', function($scope, $http, $routeParams, bookFactory, authorFactory, bookAuthorFactory){
+
+    function getAuthors(){
+      authorFactory.getAuthors()
+        .success(function(data){
+          $scope.authors = data;
+        })
+        .error(function(error){
+          $scope.status = 'Unable to load author data' + error.message;
+        });
+    }
+    getAuthors();
 
     function getBooks(){
-
       bookFactory.getBooks()
         .success(function(data) {
           console.log(data);
@@ -17,14 +27,18 @@ angular.module('readerApp')
         console.log($scope.bookData);
         bookFactory.insertBook($scope.bookData)
         .success(function(data){
-            console.log({"Success": data});
+            $scope.join.authors.forEach(function(author){
+              bookAuthorFactory.addBookAuthor(data, author.id).success(function(resulting){
+                console.log({"Success": resulting});
+              });
+          });
         });
     };
 
 
 }])
 .controller('oneBookCtrl', ['$scope', '$http', '$routeParams', 'bookFactory', function($scope, $http, $routeParams, bookFactory){
-  $scope.editBook = function(){
+    $scope.editBook = function(){
       $scope.bookData.id = $routeParams.book_id;
       console.log($scope.bookData);
       bookFactory.updateBook($scope.bookData)
